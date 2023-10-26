@@ -311,22 +311,6 @@ const NotesTable = () => {
           >
             Add Filter
           </Button>
-          <Button
-            type='button'
-            variant='contained'
-            onClick={getNotesCSV}
-            className={classes.element}
-          >
-            Export CSV
-          </Button>
-          <Button
-            type='button'
-            variant='contained'
-            onClick={handleOpen}
-            className={classes.element}
-          >
-            Upload CSV
-          </Button>
         </Box>
         <Modal
           open={open}

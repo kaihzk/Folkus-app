@@ -311,22 +311,6 @@ const EventsTable = () => {
           >
             Add Filter
           </Button>
-          <Button
-            type='button'
-            variant='contained'
-            onClick={getEventsCSV}
-            className={classes.element}
-          >
-            Export CSV
-          </Button>
-          <Button
-            type='button'
-            variant='contained'
-            onClick={handleOpen}
-            className={classes.element}
-          >
-            Upload CSV
-          </Button>
         </Box>
         <Modal
           open={open}

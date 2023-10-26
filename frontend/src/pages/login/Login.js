@@ -66,7 +66,7 @@ function Login(props) {
   let [error, setError] = useState(null);
   let [activeTabId, setActiveTabId] = useState(+tab ?? 0);
   let [nameValue, setNameValue] = useState('');
-  let [loginValue, setLoginValue] = useState('admin@flatlogic.com');
+  let [loginValue, setLoginValue] = useState('admin@folkus.com');
   let [newUserEmailValue, setNewUserEmailValue] = useState('');
   let [passwordValue, setPasswordValue] = useState('password');
   let [newUserPasswordValue, setNewUserPasswordValue] = useState('');
@@ -97,7 +97,6 @@ function Login(props) {
   return (
     <Grid container className={classes.container}>
       <div className={classes.logotypeContainer}>
-        <img src={logo} alt='logo' className={classes.logotypeImage} />
         <Typography className={classes.logotypeText}>Folkus</Typography>
       </div>
       <div
@@ -334,18 +333,6 @@ function Login(props) {
             </>
           )}
         </div>
-        <Typography color='primary' className={classes.copyright}>
-          2014-{new Date().getFullYear()}{' '}
-          <a
-            style={{ textDecoration: 'none', color: 'inherit' }}
-            href='https://flatlogic.com'
-            rel='noopener noreferrer'
-            target='_blank'
-          >
-            Flatlogic
-          </a>
-          , LLC. All rights reserved.
-        </Typography>
       </div>
     </Grid>
   );

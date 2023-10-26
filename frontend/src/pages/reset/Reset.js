@@ -121,18 +121,6 @@ function Reset(props) {
             </Button>
           </div>
         </div>
-        <Typography color='primary' className={classes.copyright}>
-          2014-{new Date().getFullYear()}{' '}
-          <a
-            style={{ textDecoration: 'none', color: 'inherit' }}
-            href='https://flatlogic.com'
-            rel='noopener noreferrer'
-            target='_blank'
-          >
-            Flatlogic
-          </a>
-          , LLC. All rights reserved.
-        </Typography>
       </div>
     </Grid>
   );

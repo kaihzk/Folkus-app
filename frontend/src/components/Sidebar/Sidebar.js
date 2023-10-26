@@ -168,17 +168,6 @@ function Sidebar({ location, structure }) {
 
         {
           <SidebarLink
-            label='Accounts'
-            link='/admin/accounts'
-            location={location}
-            isSidebarOpened={isSidebarOpenedWrapper}
-            icon={<CoreIcon />}
-            toggleDrawer={toggleDrawer(true)}
-          />
-        }
-
-        {
-          <SidebarLink
             label='Profiles'
             link='/admin/profiles'
             location={location}
@@ -195,17 +184,6 @@ function Sidebar({ location, structure }) {
             location={location}
             isSidebarOpened={isSidebarOpenedWrapper}
             icon={<CoreIcon />}
-            toggleDrawer={toggleDrawer(true)}
-          />
-        }
-
-        {
-          <SidebarLink
-            label='API docs'
-            link='/admin/api-docs'
-            location={location}
-            isSidebarOpened={isSidebarOpenedWrapper}
-            icon={<DocumentationIcon />}
             toggleDrawer={toggleDrawer(true)}
           />
         }
