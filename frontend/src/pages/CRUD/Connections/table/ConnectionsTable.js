@@ -76,6 +76,8 @@ const ConnectionsTable = () => {
   const [filters, setFilters] = useState([
     { label: 'Name', title: 'name' },
     { label: 'Email', title: 'email' },
+    { label: 'Preferred Name', title: 'preferredName' },
+    { label: 'Headline', title: 'headline' },
   ]);
 
   const [filterItems, setFilterItems] = useState([]);
@@ -308,6 +310,50 @@ const ConnectionsTable = () => {
       valueOptions: ['Online', 'Offline'],
 
       headerName: 'Status',
+    },
+
+    {
+      field: 'preferredName',
+
+      flex: 0.6,
+      editable: true,
+
+      headerName: 'Preferred Name',
+    },
+
+    {
+      field: 'gender',
+
+      editable: true,
+      type: 'singleSelect',
+      valueOptions: ['Male', 'Female', 'Other'],
+
+      headerName: 'Gender',
+    },
+
+    {
+      field: 'birthday',
+
+      headerName: 'Birthday',
+    },
+
+    {
+      field: 'headline',
+
+      flex: 0.6,
+      editable: true,
+
+      headerName: 'Headline',
+    },
+
+    {
+      field: 'registered',
+
+      renderCell: (params) => dataFormat.booleanFormatter(params.row),
+      editable: true,
+      type: 'boolean',
+
+      headerName: 'Registered',
     },
 
     {

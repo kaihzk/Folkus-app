@@ -73,7 +73,10 @@ const TasksTable = () => {
   const linkCsvDownload = useRef(null);
   const [width, setWidth] = useState(window.innerWidth);
 
-  const [filters, setFilters] = useState([]);
+  const [filters, setFilters] = useState([
+    { label: 'Task', title: 'task' },
+    { label: 'Details', title: 'details' },
+  ]);
 
   const [filterItems, setFilterItems] = useState([]);
   const [filterUrl, setFilterUrl] = useState('');
@@ -280,13 +283,43 @@ const TasksTable = () => {
 
   const columns = [
     {
+      field: 'task',
+
+      flex: 0.6,
+      editable: true,
+
+      headerName: 'Task',
+    },
+
+    {
+      field: 'dueTime',
+
+      renderCell: (params) => dataFormat.dateTimeFormatter(params.value),
+      editable: true,
+      type: 'dateTime',
+      valueGetter: (GridValueGetterParams) =>
+        new Date(GridValueGetterParams.row.dueTime),
+
+      headerName: 'Due Time',
+    },
+
+    {
       field: 'status',
 
       editable: true,
       type: 'singleSelect',
-      valueOptions: ['TODO', 'IN PROGRESS', 'COMPLETED'],
+      valueOptions: ['To-Do', 'In-Progress', 'Finished'],
 
       headerName: 'Status',
+    },
+
+    {
+      field: 'details',
+
+      flex: 0.6,
+      editable: true,
+
+      headerName: 'Details',
     },
 
     {

@@ -18,6 +18,12 @@ module.exports = class ConnectionsDBApi {
         name: data.name || null,
         email: data.email || null,
         status: data.status || null,
+        preferredName: data.preferredName || null,
+        gender: data.gender || null,
+        birthday: data.birthday || null,
+        headline: data.headline || null,
+        registered: data.registered || false,
+
         importHash: data.importHash || null,
         createdById: currentUser.id,
         updatedById: currentUser.id,
@@ -39,6 +45,12 @@ module.exports = class ConnectionsDBApi {
       name: item.name || null,
       email: item.email || null,
       status: item.status || null,
+      preferredName: item.preferredName || null,
+      gender: item.gender || null,
+      birthday: item.birthday || null,
+      headline: item.headline || null,
+      registered: item.registered || false,
+
       importHash: item.importHash || null,
       createdById: currentUser.id,
       updatedById: currentUser.id,
@@ -67,6 +79,12 @@ module.exports = class ConnectionsDBApi {
         name: data.name || null,
         email: data.email || null,
         status: data.status || null,
+        preferredName: data.preferredName || null,
+        gender: data.gender || null,
+        birthday: data.birthday || null,
+        headline: data.headline || null,
+        registered: data.registered || false,
+
         updatedById: currentUser.id,
       },
       { transaction },
@@ -149,6 +167,48 @@ module.exports = class ConnectionsDBApi {
         };
       }
 
+      if (filter.preferredName) {
+        where = {
+          ...where,
+          [Op.and]: Utils.ilike(
+            'connections',
+            'preferredName',
+            filter.preferredName,
+          ),
+        };
+      }
+
+      if (filter.headline) {
+        where = {
+          ...where,
+          [Op.and]: Utils.ilike('connections', 'headline', filter.headline),
+        };
+      }
+
+      if (filter.birthdayRange) {
+        const [start, end] = filter.birthdayRange;
+
+        if (start !== undefined && start !== null && start !== '') {
+          where = {
+            ...where,
+            birthday: {
+              ...where.birthday,
+              [Op.gte]: start,
+            },
+          };
+        }
+
+        if (end !== undefined && end !== null && end !== '') {
+          where = {
+            ...where,
+            birthday: {
+              ...where.birthday,
+              [Op.lte]: end,
+            },
+          };
+        }
+      }
+
       if (
         filter.active === true ||
         filter.active === 'true' ||
@@ -165,6 +225,20 @@ module.exports = class ConnectionsDBApi {
         where = {
           ...where,
           status: filter.status,
+        };
+      }
+
+      if (filter.gender) {
+        where = {
+          ...where,
+          gender: filter.gender,
+        };
+      }
+
+      if (filter.registered) {
+        where = {
+          ...where,
+          registered: filter.registered,
         };
       }
 

@@ -109,6 +109,22 @@ const UsersForm = (props) => {
               </Grid>
 
               <Grid item>
+                <RadioFormItem name={'Gender'} schema={usersFields} />
+              </Grid>
+
+              <Grid item>
+                <DatePickerFormItem name={'birthday'} schema={usersFields} />
+              </Grid>
+
+              <Grid item>
+                <InputFormItem name={'preferredName'} schema={usersFields} />
+              </Grid>
+
+              <Grid item>
+                <InputFormItem name={'headline'} schema={usersFields} />
+              </Grid>
+
+              <Grid item>
                 <InputFormItem name={'password'} schema={usersFields} />
               </Grid>
             </Grid>

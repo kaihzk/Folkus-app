@@ -1,17 +1,38 @@
 const tasksFields = {
   id: { type: 'id', label: 'ID' },
 
+  task: {
+    type: 'string',
+    label: 'Task',
+
+    options: [{ value: 'value', label: 'value' }],
+  },
+
+  dueTime: {
+    type: 'datetime',
+    label: 'Due Time',
+
+    options: [{ value: 'value', label: 'value' }],
+  },
+
   status: {
     type: 'enum',
     label: 'Status',
 
     options: [
-      { value: 'TODO', label: 'TODO' },
+      { value: 'To-Do', label: 'To-Do' },
 
-      { value: 'IN PROGRESS', label: 'IN PROGRESS' },
+      { value: 'In-Progress', label: 'In-Progress' },
 
-      { value: 'COMPLETED', label: 'COMPLETED' },
+      { value: 'Finished', label: 'Finished' },
     ],
+  },
+
+  details: {
+    type: 'string',
+    label: 'Details',
+
+    options: [{ value: 'value', label: 'value' }],
   },
 };
 

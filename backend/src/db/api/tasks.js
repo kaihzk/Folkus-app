@@ -15,7 +15,10 @@ module.exports = class TasksDBApi {
       {
         id: data.id || undefined,
 
+        task: data.task || null,
+        dueTime: data.dueTime || null,
         status: data.status || null,
+        details: data.details || null,
         importHash: data.importHash || null,
         createdById: currentUser.id,
         updatedById: currentUser.id,
@@ -34,7 +37,10 @@ module.exports = class TasksDBApi {
     const tasksData = data.map((item) => ({
       id: item.id || undefined,
 
+      task: item.task || null,
+      dueTime: item.dueTime || null,
       status: item.status || null,
+      details: item.details || null,
       importHash: item.importHash || null,
       createdById: currentUser.id,
       updatedById: currentUser.id,
@@ -58,7 +64,10 @@ module.exports = class TasksDBApi {
 
     await tasks.update(
       {
+        task: data.task || null,
+        dueTime: data.dueTime || null,
         status: data.status || null,
+        details: data.details || null,
         updatedById: currentUser.id,
       },
       { transaction },
@@ -122,6 +131,44 @@ module.exports = class TasksDBApi {
           ...where,
           ['id']: Utils.uuid(filter.id),
         };
+      }
+
+      if (filter.task) {
+        where = {
+          ...where,
+          [Op.and]: Utils.ilike('tasks', 'task', filter.task),
+        };
+      }
+
+      if (filter.details) {
+        where = {
+          ...where,
+          [Op.and]: Utils.ilike('tasks', 'details', filter.details),
+        };
+      }
+
+      if (filter.dueTimeRange) {
+        const [start, end] = filter.dueTimeRange;
+
+        if (start !== undefined && start !== null && start !== '') {
+          where = {
+            ...where,
+            dueTime: {
+              ...where.dueTime,
+              [Op.gte]: start,
+            },
+          };
+        }
+
+        if (end !== undefined && end !== null && end !== '') {
+          where = {
+            ...where,
+            dueTime: {
+              ...where.dueTime,
+              [Op.lte]: end,
+            },
+          };
+        }
       }
 
       if (

@@ -28,6 +28,37 @@ module.exports = function (sequelize, DataTypes) {
         values: ['Online', 'Offline'],
       },
 
+      preferredName: {
+        type: DataTypes.TEXT,
+      },
+
+      gender: {
+        type: DataTypes.ENUM,
+
+        values: ['Male', 'Female', 'Other'],
+      },
+
+      birthday: {
+        type: DataTypes.DATEONLY,
+
+        get: function () {
+          return this.getDataValue('birthday')
+            ? moment.utc(this.getDataValue('birthday')).format('YYYY-MM-DD')
+            : null;
+        },
+      },
+
+      headline: {
+        type: DataTypes.TEXT,
+      },
+
+      registered: {
+        type: DataTypes.BOOLEAN,
+
+        allowNull: false,
+        defaultValue: false,
+      },
+
       importHash: {
         type: DataTypes.STRING(255),
         allowNull: true,

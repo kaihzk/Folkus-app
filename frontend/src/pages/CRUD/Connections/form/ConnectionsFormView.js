@@ -73,6 +73,35 @@ const ConnectionsForm = (props) => {
                 />
               </Grid>
 
+              <Grid item>
+                <Typography variant='h6' style={{ marginBottom: 10 }}>
+                  {connectionsFields['preferredName'].label}
+                </Typography>
+                <Typography>{form.values.preferredName}</Typography>
+              </Grid>
+
+              <Grid item>
+                <RadioFormItem
+                  name={'gender'}
+                  schema={connectionsFields}
+                  disabled={true}
+                />
+              </Grid>
+
+              <Grid item>
+                <DatePickerFormItem
+                  name={'birthday'}
+                  schema={connectionsFields}
+                />
+              </Grid>
+
+              <Grid item>
+                <Typography variant='h6' style={{ marginBottom: 10 }}>
+                  {connectionsFields['headline'].label}
+                </Typography>
+                <Typography>{form.values.headline}</Typography>
+              </Grid>
+
               <Grid container ml={3} mt={3}>
                 <Grid item>
                   <Button

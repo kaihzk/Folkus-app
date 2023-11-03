@@ -68,7 +68,23 @@ const TasksForm = (props) => {
           <form onSubmit={form.handleSubmit}>
             <Grid container spacing={3} direction='column'>
               <Grid item>
+                <InputFormItem name={'task'} schema={tasksFields} autoFocus />
+              </Grid>
+
+              <Grid item>
+                <DatePickerFormItem
+                  name={'dueTime'}
+                  schema={tasksFields}
+                  showTimeInput
+                />
+              </Grid>
+
+              <Grid item>
                 <RadioFormItem name={'status'} schema={tasksFields} />
+              </Grid>
+
+              <Grid item>
+                <InputFormItem name={'details'} schema={tasksFields} />
               </Grid>
             </Grid>
             <Grid container spacing={3} mt={2}>

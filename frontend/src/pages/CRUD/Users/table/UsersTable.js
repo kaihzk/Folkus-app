@@ -78,6 +78,8 @@ const UsersTable = () => {
     { label: 'Last Name', title: 'lastName' },
     { label: 'Phone Number', title: 'phoneNumber' },
     { label: 'E-Mail', title: 'email' },
+    { label: 'Preferred Name', title: 'preferredName' },
+    { label: 'Headline', title: 'headline' },
   ]);
 
   const [filterItems, setFilterItems] = useState([]);
@@ -349,6 +351,40 @@ const UsersTable = () => {
       valueOptions: ['admin', 'user'],
 
       headerName: '',
+    },
+
+    {
+      field: 'Gender',
+
+      editable: true,
+      type: 'singleSelect',
+      valueOptions: ['Male', 'Female', 'Other'],
+
+      headerName: 'Gender',
+    },
+
+    {
+      field: 'birthday',
+
+      headerName: 'Birthday',
+    },
+
+    {
+      field: 'preferredName',
+
+      flex: 0.6,
+      editable: true,
+
+      headerName: 'Preferred Name',
+    },
+
+    {
+      field: 'headline',
+
+      flex: 0.6,
+      editable: true,
+
+      headerName: 'Headline',
     },
 
     {
