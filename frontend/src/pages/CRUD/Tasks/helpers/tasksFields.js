@@ -34,6 +34,13 @@ const tasksFields = {
 
     options: [{ value: 'value', label: 'value' }],
   },
+
+  taskStatus: {
+    type: 'string',
+    label: 'Task Status',
+
+    options: [{ value: 'value', label: 'value' }],
+  },
 };
 
 export default tasksFields;

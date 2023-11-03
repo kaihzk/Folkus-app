@@ -84,6 +84,13 @@ const TasksForm = (props) => {
                 <Typography>{form.values.details}</Typography>
               </Grid>
 
+              <Grid item>
+                <Typography variant='h6' style={{ marginBottom: 10 }}>
+                  {tasksFields['taskStatus'].label}
+                </Typography>
+                <Typography>{form.values.taskStatus}</Typography>
+              </Grid>
+
               <Grid container ml={3} mt={3}>
                 <Grid item>
                   <Button

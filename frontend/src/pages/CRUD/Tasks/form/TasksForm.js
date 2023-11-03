@@ -86,6 +86,10 @@ const TasksForm = (props) => {
               <Grid item>
                 <InputFormItem name={'details'} schema={tasksFields} />
               </Grid>
+
+              <Grid item>
+                <InputFormItem name={'taskStatus'} schema={tasksFields} />
+              </Grid>
             </Grid>
             <Grid container spacing={3} mt={2}>
               <Grid item>
