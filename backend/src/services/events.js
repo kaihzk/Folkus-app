@@ -81,9 +81,6 @@ module.exports = class EventsService {
     const transaction = await db.sequelize.transaction();
 
     try {
-      if (currentUser.role !== 'admin') {
-        throw new ValidationError('errors.forbidden.message');
-      }
 
       await EventsDBApi.remove(id, {
         currentUser,

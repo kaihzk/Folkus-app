@@ -81,9 +81,6 @@ module.exports = class TasksService {
     const transaction = await db.sequelize.transaction();
 
     try {
-      if (currentUser.role !== 'admin') {
-        throw new ValidationError('errors.forbidden.message');
-      }
 
       await TasksDBApi.remove(id, {
         currentUser,

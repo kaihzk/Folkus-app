@@ -81,10 +81,6 @@ module.exports = class ConnectionsService {
     const transaction = await db.sequelize.transaction();
 
     try {
-      if (currentUser.role !== 'admin') {
-        throw new ValidationError('errors.forbidden.message');
-      }
-
       await ConnectionsDBApi.remove(id, {
         currentUser,
         transaction,

@@ -387,6 +387,7 @@ module.exports = {
           type: Sequelize.DataTypes.ENUM,
 
           values: ['admin', 'user'],
+          defaultValue: 'user',
         },
         { transaction },
       );
