@@ -97,6 +97,10 @@ module.exports = class UsersService {
   static async update(data, id, currentUser) {
     const transaction = await db.sequelize.transaction();
     try {
+      if (currentUser.id != id && currentUser.role != 'admin'){
+        throw new ValidationError('errors.forbidden.message');
+      }
+      
       let users = await UsersDBApi.findBy({ id }, { transaction });
 
       if (!users) {

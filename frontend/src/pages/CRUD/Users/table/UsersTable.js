@@ -399,9 +399,6 @@ const UsersTable = () => {
     <div>
       <Widget title={humanize('Users')} disableWidgetMenu>
         <Box className={classes.actions}>
-          <Link to='/admin/users/new' className={classes.element}>
-            <Button variant='contained'>New</Button>
-          </Link>
           <Button
             type='button'
             variant='contained'
