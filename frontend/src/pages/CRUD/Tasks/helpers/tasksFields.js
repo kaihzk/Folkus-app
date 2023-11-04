@@ -15,19 +15,6 @@ const tasksFields = {
     options: [{ value: 'value', label: 'value' }],
   },
 
-  status: {
-    type: 'enum',
-    label: 'Status',
-
-    options: [
-      { value: 'To-Do', label: 'To-Do' },
-
-      { value: 'In-Progress', label: 'In-Progress' },
-
-      { value: 'Finished', label: 'Finished' },
-    ],
-  },
-
   details: {
     type: 'string',
     label: 'Details',
@@ -36,10 +23,16 @@ const tasksFields = {
   },
 
   taskStatus: {
-    type: 'string',
+    type: 'enum',
     label: 'Task Status',
 
-    options: [{ value: 'value', label: 'value' }],
+    options: [
+      { value: 'To-Do', label: 'To-Do' },
+
+      { value: 'In-Progress', label: 'In-Progress' },
+
+      { value: 'Finished', label: 'Finished' },
+    ],
   },
 };
 

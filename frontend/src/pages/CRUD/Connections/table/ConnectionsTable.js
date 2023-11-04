@@ -76,7 +76,6 @@ const ConnectionsTable = () => {
   const [filters, setFilters] = useState([
     { label: 'Name', title: 'name' },
     { label: 'Email', title: 'email' },
-    { label: 'Preferred Name', title: 'preferredName' },
     { label: 'Headline', title: 'headline' },
   ]);
 
@@ -310,15 +309,6 @@ const ConnectionsTable = () => {
       valueOptions: ['Online', 'Offline'],
 
       headerName: 'Status',
-    },
-
-    {
-      field: 'preferredName',
-
-      flex: 0.6,
-      editable: true,
-
-      headerName: 'Preferred Name',
     },
 
     {

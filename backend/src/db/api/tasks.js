@@ -17,7 +17,6 @@ module.exports = class TasksDBApi {
 
         task: data.task || null,
         dueTime: data.dueTime || null,
-        status: data.status || null,
         details: data.details || null,
         taskStatus: data.taskStatus || null,
         importHash: data.importHash || null,
@@ -40,7 +39,6 @@ module.exports = class TasksDBApi {
 
       task: item.task || null,
       dueTime: item.dueTime || null,
-      status: item.status || null,
       details: item.details || null,
       taskStatus: item.taskStatus || null,
       importHash: item.importHash || null,
@@ -68,7 +66,6 @@ module.exports = class TasksDBApi {
       {
         task: data.task || null,
         dueTime: data.dueTime || null,
-        status: data.status || null,
         details: data.details || null,
         taskStatus: data.taskStatus || null,
         updatedById: currentUser.id,
@@ -150,13 +147,6 @@ module.exports = class TasksDBApi {
         };
       }
 
-      if (filter.taskStatus) {
-        where = {
-          ...where,
-          [Op.and]: Utils.ilike('tasks', 'taskStatus', filter.taskStatus),
-        };
-      }
-
       if (filter.dueTimeRange) {
         const [start, end] = filter.dueTimeRange;
 
@@ -193,10 +183,10 @@ module.exports = class TasksDBApi {
         };
       }
 
-      if (filter.status) {
+      if (filter.taskStatus) {
         where = {
           ...where,
-          status: filter.status,
+          taskStatus: filter.taskStatus,
         };
       }
 

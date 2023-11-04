@@ -70,14 +70,6 @@ const TasksForm = (props) => {
               </Grid>
 
               <Grid item>
-                <RadioFormItem
-                  name={'status'}
-                  schema={tasksFields}
-                  disabled={true}
-                />
-              </Grid>
-
-              <Grid item>
                 <Typography variant='h6' style={{ marginBottom: 10 }}>
                   {tasksFields['details'].label}
                 </Typography>
@@ -85,10 +77,11 @@ const TasksForm = (props) => {
               </Grid>
 
               <Grid item>
-                <Typography variant='h6' style={{ marginBottom: 10 }}>
-                  {tasksFields['taskStatus'].label}
-                </Typography>
-                <Typography>{form.values.taskStatus}</Typography>
+                <RadioFormItem
+                  name={'taskStatus'}
+                  schema={tasksFields}
+                  disabled={true}
+                />
               </Grid>
 
               <Grid container ml={3} mt={3}>

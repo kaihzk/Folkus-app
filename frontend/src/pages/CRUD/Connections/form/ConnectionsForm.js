@@ -84,13 +84,6 @@ const ConnectionsForm = (props) => {
               </Grid>
 
               <Grid item>
-                <InputFormItem
-                  name={'preferredName'}
-                  schema={connectionsFields}
-                />
-              </Grid>
-
-              <Grid item>
                 <RadioFormItem name={'gender'} schema={connectionsFields} />
               </Grid>
 

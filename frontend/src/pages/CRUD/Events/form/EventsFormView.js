@@ -77,11 +77,11 @@ const EventsForm = (props) => {
                 <ItemsList
                   tableName={'involved'}
                   items={form.values.involved.map((item) => ({
-                    id: item.id,
+                    name: item.name,
                     id: item.id,
                   }))}
                   name={'connections'}
-                  nameRow={'id'}
+                  nameRow={'name'}
                 />
               </Grid>
 

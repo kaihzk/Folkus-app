@@ -80,15 +80,11 @@ const TasksForm = (props) => {
               </Grid>
 
               <Grid item>
-                <RadioFormItem name={'status'} schema={tasksFields} />
-              </Grid>
-
-              <Grid item>
                 <InputFormItem name={'details'} schema={tasksFields} />
               </Grid>
 
               <Grid item>
-                <InputFormItem name={'taskStatus'} schema={tasksFields} />
+                <RadioFormItem name={'taskStatus'} schema={tasksFields} />
               </Grid>
             </Grid>
             <Grid container spacing={3} mt={2}>

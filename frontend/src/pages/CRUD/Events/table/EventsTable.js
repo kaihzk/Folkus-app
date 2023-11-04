@@ -330,7 +330,7 @@ const EventsTable = () => {
           <DataGridMultiSelect
             {...params}
             entityName={'connections'}
-            nameRow={'id'}
+            nameRow={'name'}
           />
         );
       },

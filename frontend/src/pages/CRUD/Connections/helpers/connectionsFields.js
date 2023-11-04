@@ -26,13 +26,6 @@ const connectionsFields = {
     ],
   },
 
-  preferredName: {
-    type: 'string',
-    label: 'Preferred Name',
-
-    options: [{ value: 'value', label: 'value' }],
-  },
-
   gender: {
     type: 'enum',
     label: 'Gender',

@@ -18,7 +18,6 @@ module.exports = class ConnectionsDBApi {
         name: data.name || null,
         email: data.email || null,
         status: data.status || null,
-        preferredName: data.preferredName || null,
         gender: data.gender || null,
         birthday: data.birthday || null,
         headline: data.headline || null,
@@ -45,7 +44,6 @@ module.exports = class ConnectionsDBApi {
       name: item.name || null,
       email: item.email || null,
       status: item.status || null,
-      preferredName: item.preferredName || null,
       gender: item.gender || null,
       birthday: item.birthday || null,
       headline: item.headline || null,
@@ -79,7 +77,6 @@ module.exports = class ConnectionsDBApi {
         name: data.name || null,
         email: data.email || null,
         status: data.status || null,
-        preferredName: data.preferredName || null,
         gender: data.gender || null,
         birthday: data.birthday || null,
         headline: data.headline || null,
@@ -164,17 +161,6 @@ module.exports = class ConnectionsDBApi {
         where = {
           ...where,
           [Op.and]: Utils.ilike('connections', 'email', filter.email),
-        };
-      }
-
-      if (filter.preferredName) {
-        where = {
-          ...where,
-          [Op.and]: Utils.ilike(
-            'connections',
-            'preferredName',
-            filter.preferredName,
-          ),
         };
       }
 
@@ -311,21 +297,21 @@ module.exports = class ConnectionsDBApi {
       where = {
         [Op.or]: [
           { ['id']: Utils.uuid(query) },
-          Utils.ilike('connections', 'id', query),
+          Utils.ilike('connections', 'name', query),
         ],
       };
     }
 
     const records = await db.connections.findAll({
-      attributes: ['id', 'id'],
+      attributes: ['id', 'name'],
       where,
       limit: limit ? Number(limit) : undefined,
-      orderBy: [['id', 'ASC']],
+      orderBy: [['name', 'ASC']],
     });
 
     return records.map((record) => ({
       id: record.id,
-      label: record.id,
+      label: record.name,
     }));
   }
 };

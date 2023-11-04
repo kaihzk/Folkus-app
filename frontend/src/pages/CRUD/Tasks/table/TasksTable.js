@@ -76,7 +76,6 @@ const TasksTable = () => {
   const [filters, setFilters] = useState([
     { label: 'Task', title: 'task' },
     { label: 'Details', title: 'details' },
-    { label: 'Task Status', title: 'taskStatus' },
   ]);
 
   const [filterItems, setFilterItems] = useState([]);
@@ -305,16 +304,6 @@ const TasksTable = () => {
     },
 
     {
-      field: 'status',
-
-      editable: true,
-      type: 'singleSelect',
-      valueOptions: ['To-Do', 'In-Progress', 'Finished'],
-
-      headerName: 'Status',
-    },
-
-    {
       field: 'details',
 
       flex: 0.6,
@@ -326,8 +315,9 @@ const TasksTable = () => {
     {
       field: 'taskStatus',
 
-      flex: 0.6,
       editable: true,
+      type: 'singleSelect',
+      valueOptions: ['To-Do', 'In-Progress', 'Finished'],
 
       headerName: 'Task Status',
     },

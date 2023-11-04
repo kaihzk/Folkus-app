@@ -74,17 +74,17 @@ function connectionsManyListFormatter(val) {
 }
 function connectionsOneListFormatter(val) {
   if (!val) return '';
-  return val.id;
+  return val.name;
 }
 function connectionsManyListFormatterEdit(val) {
   if (!val || !val.length) return [];
   return val.map((item) => {
-    return { id: item.id, label: item.id };
+    return { id: item.id, label: item.name };
   });
 }
 function connectionsOneListFormatterEdit(val) {
   if (!val) return '';
-  return { label: val.id, id: val.id };
+  return { label: val.name, id: val.id };
 }
 
 function listFormatter(cell, history, entity) {

@@ -28,10 +28,6 @@ module.exports = function (sequelize, DataTypes) {
         values: ['Online', 'Offline'],
       },
 
-      preferredName: {
-        type: DataTypes.TEXT,
-      },
-
       gender: {
         type: DataTypes.ENUM,
 

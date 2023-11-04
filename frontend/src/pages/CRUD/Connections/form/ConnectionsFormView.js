@@ -74,13 +74,6 @@ const ConnectionsForm = (props) => {
               </Grid>
 
               <Grid item>
-                <Typography variant='h6' style={{ marginBottom: 10 }}>
-                  {connectionsFields['preferredName'].label}
-                </Typography>
-                <Typography>{form.values.preferredName}</Typography>
-              </Grid>
-
-              <Grid item>
                 <RadioFormItem
                   name={'gender'}
                   schema={connectionsFields}
