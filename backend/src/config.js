@@ -9,7 +9,7 @@ const config = {
     saltRounds: 12,
   },
   admin_pass: 'password',
-  admin_email: 'admin@flatlogic.com',
+  admin_email: 'admin@folkus.com',
   providers: {
     LOCAL: 'local',
     GOOGLE: 'google',
