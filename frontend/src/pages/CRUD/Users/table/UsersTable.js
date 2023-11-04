@@ -301,7 +301,7 @@ const UsersTable = () => {
       field: 'firstName',
 
       flex: 0.6,
-      editable: true,
+      editable: false,
 
       headerName: 'First Name',
     },
@@ -310,7 +310,7 @@ const UsersTable = () => {
       field: 'preferredName',
 
       flex: 0.6,
-      editable: true,
+      editable: false,
 
       headerName: 'Preferred Name',
     },
@@ -319,7 +319,7 @@ const UsersTable = () => {
       field: 'lastName',
 
       flex: 0.6,
-      editable: true,
+      editable: false,
 
       headerName: 'Last Name',
     },
@@ -328,7 +328,7 @@ const UsersTable = () => {
       field: 'phoneNumber',
 
       flex: 0.6,
-      editable: true,
+      editable: false,
 
       headerName: 'Phone Number',
     },
@@ -337,14 +337,14 @@ const UsersTable = () => {
       field: 'email',
 
       flex: 0.6,
-      editable: true,
+      editable: false,
 
       headerName: 'E-Mail',
     },
     {
       field: 'role',
 
-      editable: true,
+      editable: false,
       type: 'singleSelect',
       valueOptions: ['admin', 'user'],
 
@@ -354,7 +354,7 @@ const UsersTable = () => {
     {
       field: 'Gender',
 
-      editable: true,
+      editable: false,
       type: 'singleSelect',
       valueOptions: ['Male', 'Female', 'Other'],
 
@@ -363,6 +363,7 @@ const UsersTable = () => {
 
     {
       field: 'birthday',
+      editable: false,
 
       headerName: 'Birthday',
     },
@@ -372,7 +373,7 @@ const UsersTable = () => {
       field: 'headline',
 
       flex: 0.6,
-      editable: true,
+      editable: false,
 
       headerName: 'Headline',
     },
